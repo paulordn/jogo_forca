@@ -1,5 +1,5 @@
 const tecnologias = [
-    "java", "react", "node", "python", "php"
+    "java", "react", "node", "python", "php", "dotnet"
 ];
 
 const palavraSecreta = tecnologias[Math.floor(Math.random() * tecnologias.length)];
@@ -26,7 +26,8 @@ document.addEventListener("keydown", (evento) => {
 function AtualizarJogo() {
     monstrarLetrasErradas();
     monstraLetrasCertas();
-    //desenharForca();
+    desenharForca();
+    checarJogo();
 }
 
 function monstrarLetrasErradas() {
@@ -49,6 +50,31 @@ function monstraLetrasCertas() {
     })
 }
 
+function checarJogo(){
+    let mensagem = "";
+    const container = document.querySelector(".palavra-secreta-container");
+    const parteCorpo = document.querySelectorAll(".forca-parte");
+    if(letrasErradas.length == parteCorpo.length) {
+        mensagem = "Fim de Jogo! Você perdeu!"
+    }
+
+    if(palavraSecreta == container.innerText){
+        mensagem = "Parabéns! Você ganhou !"
+    }
+
+    if(mensagem){
+        document.querySelector("#mensagem").innerHTML = mensagem;
+        document.querySelector(".popup-container").style.display = "flex";
+    }
+}
+
+function desenharForca(){
+    const parteCorpo = document.querySelectorAll(".forca-parte");
+    for(let i = 0; i < letrasErradas.length; i++) {
+        parteCorpo[i].style.display = "block";
+    }
+}
+
 function monstrarAvisoLetraRepetida() {
     const aviso = document.querySelector(".aviso-palavra-repetida");
     aviso.classList.add("show");
@@ -59,4 +85,8 @@ function monstrarAvisoLetraRepetida() {
 
 function isLetra (codigo) {
     return codigo >= 65 && codigo <= 90;
+}
+
+function reiniciarJogo(){
+    window.location.reload();
 }
