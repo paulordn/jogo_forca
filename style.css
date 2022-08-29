@@ -18,7 +18,7 @@ body {
 
 .forca {
     fill: transparent;
-    stroke: black;
+    stroke: #fff;
     stroke-width: 4px;
     stroke-linecap: round;
 }
