@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <title>Forca</title>
 </head>
 <body>
     <!--Inicio do header-->
     <header>
-
+        <h1>Jogo da Forca !</h1>
+        <p>Acerte a palavra de acordo com o tema !</p>
     </header>
     <!--Inicio da Main-->
     <main>
+        <div class="jogo-conteiner">
+            <div class="forca-container">
+                <svg height="250" width="200" class="forca">
+                    <!-- Forca -->
+                    <line x1="60" y1="20" x2="140" y2="20" />
+                    <line x1="140" y1="20" x2="140" y2="50" />
+                    <line x1="60" y1="20" x2="60" y2="230" />
+                    <line x1="20" y1="230" x2="100" y2="230" />
+                </svg>
+            </div>
 
+            <div class="letras-erradas-container">
+                <h3>Letras erradas</h3>
+            </div>
+
+        </div>
     </main>
     <!--Inicio Foorter-->
     <footer>
