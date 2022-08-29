@@ -1,5 +1,5 @@
 const tecnologias = [
-    "java", "react", "node", "python", "php", "dotnet"
+    "java", "react", "node", "python", "php", "dotnet", "github", "ruby", "mysql", "JavaScrpit"
 ];
 
 const palavraSecreta = tecnologias[Math.floor(Math.random() * tecnologias.length)];
